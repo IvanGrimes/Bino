@@ -1,0 +1,42 @@
+.footer {
+  position: relative;
+  background-color: #202020;
+  padding: 35px 0;
+  &__social {
+    list-style-type: none;
+  }
+  &__item {
+    float: left;
+    margin-left: 20px;
+    &:first-child {
+      margin-left: 0;
+    }
+  }
+  &__social-link {
+    color: $text-primary-color;
+    font-size: 1.25em;
+    &:hover {
+      color: $primary-color;
+    }
+  }
+  &__back-to-top {
+    position: absolute;
+    z-index: 5;
+    right: 3%;
+    top: -22.5%;
+    width: 53px;
+    height: 53px;
+    font-size: 1.25em;
+    color: #fff;
+    border-radius: 50%;
+    background-color: $primary-color;
+    box-shadow: 1px 3px 5px 0px rgba(0, 0, 0, 0.25);
+    &::before {
+      display: block;
+      font-family: FontAwesome;
+      content: '\f077';
+      text-align: center;
+      padding-top: calc(50% - 0.625em);
+    }
+  }
+}

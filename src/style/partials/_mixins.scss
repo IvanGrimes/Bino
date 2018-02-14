@@ -1,0 +1,33 @@
+@mixin roundicon ($width, $color, $type) {
+    $size: $width + 0px;
+    text-align: center;
+    position: relative;
+    width: $size;
+    height: $size;
+    border-radius: 100%;
+    @if $type == big {
+        background-color: #ffffff;
+    } @else if $type == small {
+        background-color: #f4f5f9;
+    }
+    &::before {
+        position: absolute;
+        content: '';
+        border-radius: 100%;
+        z-index: -1;
+        @if $type == big {
+            width: $size + 20px;
+            height: $size + 20px;
+            left: -10px;
+            top: -10px;
+            background-color: #f4f5f9;
+        } @else if $type == small {
+            width: $size + 10px;
+            height: $size + 10px;
+            left: -5px;
+            top: -5px;
+            background-color: #ffffff;
+        }
+        opacity: .25;
+    }
+}

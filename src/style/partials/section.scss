@@ -1,0 +1,24 @@
+.section {
+  padding: 150px 0;
+  clear: both;
+
+  &_background {
+    &_color-1 {
+      background-color: #fff;
+    }
+    &_color-2 {
+      background-color: $secondary-color;
+    }
+    &_color-3 {
+      position: relative;
+      background-color: #202020;
+    }
+    &_image {
+      background-position: center center;
+      background-size: cover;
+    }
+  }
+  &_no_padding {
+    padding: 0;
+  }
+}

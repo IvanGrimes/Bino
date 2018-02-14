@@ -1,0 +1,89 @@
+.price {
+  $b: &;
+  color: $text-primary-color;
+  margin-top: 17px;
+  @include media-breakpoint-up(lg) {
+    margin-top: 67px;
+  }
+  &__item {
+    position: relative;
+    width: 100%;
+    padding: 50px 15px;
+    background-color: #f4f5f9;
+    text-align: center;
+    margin-top: 50px;
+    @include media-breakpoint-up(lg) {
+      margin-top: 0;
+    }
+    &::before {
+      position: absolute;
+      left: 0;
+      top: 0;
+      content: '';
+      width: 100%;
+      height: 205px;
+      background-color: $text-primary-color;
+      transition: all .25s linear;
+    }
+    &:hover {
+      &::before {
+        background-color: $primary-color;
+      }
+      #{$b} {
+        &__button {
+          background-color: $primary-color;
+        }
+        &__icon {
+          color: $primary-color;
+        }
+      }
+    }
+  }
+  &__package {
+    position: relative;
+    display: block;
+    z-index: 3;
+    color: #ffffff;
+    text-transform: uppercase;
+    font-size: 1.25em;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+  }
+  &__icon {
+    @include roundicon(153, #ffffff, big);
+    margin: 0 auto;
+    margin-top: 55px;
+    font-size: 2.45rem;
+    font-weight: 600;
+    color: $text-primary-color;
+    padding-top: 45px;
+    z-index: 2;
+    transition: all .25s linear;
+    &::after {
+      position: absolute;
+      content: 'per month';
+      font-size: .813125rem;
+      line-height: 2.75;
+      width: 100%;
+      left: 0;
+      margin-top: 31px;
+      color: $text-primary-color;
+    }
+  }
+  &__list {
+    list-style-type: none;
+    margin: 45px;
+    padding: 0;
+    &-item {
+      color:  #999999;
+      font-size: .875em;/* Приближение из-за подстановки шрифтов */
+      font-weight: 500;
+      line-height: 2.857;/* Приближение из-за подстановки шрифтов */
+    }
+  }
+  &__button {
+    margin: 0 auto;
+    padding-top: 15px;
+    transition: all .25s linear;
+  }
+}

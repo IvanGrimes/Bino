@@ -1,0 +1,172 @@
+.blog {
+  $b: &;
+  &__container {
+    padding-top: 70px;
+    @include media-breakpoint-only(xl) {
+    }
+    @include media-breakpoint-only(lg) {
+      height: 1920px;
+    }
+  }
+  &__item {
+    color: #ffffff;
+  }
+  &__image {
+    float: left;
+
+    width: 25%;
+    height: 480px;
+
+    @include media-breakpoint-down(lg) {
+      width: 50%;
+    }
+    @include media-breakpoint-down(sm) {
+      width: 100%;
+      height: auto;
+    }
+  }
+  &__content {
+    position: relative;
+
+    float: left;
+
+    width: 25%;
+    height: 480px;
+    padding: 3% 2.604%;
+
+    background-color: $primary-color;
+
+    @include media-breakpoint-down(lg) {
+      width: 50%;
+      padding: 6.5% 5% 5% 5%;
+    }
+    @include media-breakpoint-only(md) {
+      padding: 0;
+    }
+    @include media-breakpoint-down(sm) {
+      width: 100%;
+      height: auto;
+      padding: 10% 7.5%;
+    }
+  }
+  &_tail {
+    &_left {
+      &::before {
+        position: absolute;
+        top: calc(50% - 35px);
+        left: -28px;
+
+        width: 0;
+        height: 0;
+
+        content: '';
+
+        border-width: 35px 28px 35px 0;
+        border-style: solid;
+        border-color: transparent $primary-color transparent transparent;
+      }
+    }
+    &_right {
+      &::before {
+        position: absolute;
+        top: calc(50% - 35px);
+        right: -28px;
+
+        width: 0;
+        height: 0;
+
+        content: '';
+
+        border-width: 35px 0 35px 28px;
+        border-style: solid;
+        border-color: transparent transparent transparent $primary-color;
+      }
+    }
+    &_up {
+      &::before {
+        position: absolute;
+        top: -28px;
+        right: calc(50% - 35px);
+
+        width: 0;
+        height: 0;
+
+        content: '';
+
+        border-width: 0 35px 28px 35px;
+        border-style: solid;
+        border-color: transparent transparent $primary-color transparent;
+      }
+    }
+  }
+  &__category {
+    color:  #ffffff;
+
+    font-size: 14px;/* Приближение из-за подстановки шрифтов */
+    font-weight: 400;
+  }
+  &__title {
+    position: relative;
+
+    margin: 0;
+
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+
+    font-size: 24px;
+    font-weight: 500;
+
+    @include media-breakpoint-only(xl) {
+      margin-top: 35px;
+    }
+    @include media-breakpoint-down(lg) {
+      padding-top: 12.5%;
+    }
+    @include media-breakpoint-down(sm) {
+      padding-top: 5%;
+    }
+    &::after {
+      position: absolute;
+      bottom: -20px;
+      left: 0;
+
+      width: 45px;
+      height: 4px;
+
+      content: '';
+
+      background-color: #ffffff;
+    }
+  }
+  &__text {
+    margin: 0;
+    padding: 0;
+
+    color:  #ffffff;
+
+    font-size: .875em;/* Приближение из-за подстановки шрифтов */
+    font-weight: 400;
+    line-height: 2.15;/* Приближение из-за подстановки шрифтов */
+
+    @include media-breakpoint-only(xl) {
+      padding: 50px 0;
+    }
+    @include media-breakpoint-down(lg) {
+      padding: 16.5% 0 10% 0;
+    }
+    @include media-breakpoint-down(sm) {
+      padding: 10% 0;
+    }
+  }
+  &__more {
+    color:  #ffffff;
+
+    font-size: 1.125em;/* Приближение из-за подстановки шрифтов */
+    font-weight: 400;
+    font-style: italic;
+    line-height: 1.5;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}

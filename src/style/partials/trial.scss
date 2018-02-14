@@ -1,0 +1,51 @@
+.trial {
+  position: relative;
+  background-image: url(../img/footer.jpg);
+  height: 480px;
+  font-size: 12px;
+  &::before {
+    width: 100%;
+    height: 480px;
+    position: absolute;
+    content: '';
+    background-color: rgba(0, 0, 0, .6);
+  }
+  @include media-breakpoint-up(lg) {
+    font-size: 14px;
+  }
+  @include media-breakpoint-up(md) {
+    font-size: 14px;
+  }
+}
+
+.trial__container {
+  padding: 150px 0;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+
+.trial__title {
+  color:  #ffffff;
+  font-size: 2.25em;/* Приближение из-за подстановки шрифтов */
+  font-weight: 400;
+  line-height: 1.2;/* Приближение из-за подстановки шрифтов */
+  margin: 0;
+}
+
+.trial__bold {
+  font-weight: 700;
+}
+
+.trial__text {
+  color:  #ffffff;
+  font-size: 1.125em;/* Приближение из-за подстановки шрифтов */
+  font-weight: 400;
+  line-height: 2;/* Приближение из-за подстановки шрифтов */
+  margin: 0;
+  margin-top: 20px;
+}
+
+.trial__button {
+  margin: 65px auto 0 auto;
+}

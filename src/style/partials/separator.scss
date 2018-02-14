@@ -1,0 +1,43 @@
+.separator {
+  position: relative;
+  width: 7px;
+  height: 7px;
+  background-color: $primary-color;
+  border-radius: 100%;
+  margin: 0 auto;
+  margin-top: 25px;
+  &::before {
+    position: absolute;
+    left: 22px;
+    top: 3px;
+    content: '';
+    width: 80px;
+    height: 1px;
+  }
+  &::after {
+    position: absolute;
+    right: 22px;
+    top: 3px;
+    content: '';
+    width: 80px;
+    height: 1px;
+  }
+}
+
+.separator_color_white {
+  &::before {
+    background-color: #999999;
+  }
+  &::after {
+    background-color: #999999;
+  }
+}
+
+.separator_color_grey {
+  &::before {
+    background-color: $text-primary-color;
+  }
+  &::after {
+    background-color: $text-primary-color;
+  }
+}

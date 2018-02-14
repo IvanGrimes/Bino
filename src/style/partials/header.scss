@@ -1,0 +1,36 @@
+.header {
+  position: absolute;
+  z-index: 3;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  &__logo {
+    position: relative;
+    left: 0;
+    float: left;
+    width: 141px;
+    height: 52px;
+    margin-left: 22%;
+    transition: all .5s ease-in-out;
+    @include media-breakpoint-up(sm) {
+      margin-left: 0;
+    }
+  }
+  &__offcanvas {
+    position: absolute;
+    display: block;
+    top: 45px;
+    right: 6.5%;
+    z-index: 5;
+    cursor: pointer;
+    &::before {
+      display: block;
+      text-align: center;
+      content: '\f0c9';
+      color: #fff;
+      font-size: 2em;
+    }
+    @include media-breakpoint-up(lg) {
+      display: none;
+    }
+  }
+}

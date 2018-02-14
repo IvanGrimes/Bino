@@ -1,0 +1,147 @@
+//* ОБЩЕЕ *//
+// TODO: переделать некоторые элементы в модификаторы
+// TODO: Переделать текстовые (и аналогичные) блоки из <p class=""></p> в <div class=""><p></p><p></p></div> для более удобной "натяжки" на CMS
+// TODO: Добавить анимации в слайдер, при следующем слайде чтоб элементы на слайдере падали или тип того
+// TODO: В разделе stat сделать чтобы при слайде счетчики накручивались с 0
+// TODO: В блоге при наведении на blog__item чтобы blog__image увеличивалась (&:hover {zoom: 1.5})
+// TODO: Переделать в slider img в background-image и cover(3)
+// TODO: Поправить позиционирование team__name team__spec
+// TODO: Разделить js на куски
+// TODO: Изменить единицы измерения в margin,padding на em и поправить font-size на устройствах через mq
+// TODO: Починить кнопки в слайдере
+
+
+
+// TODO: в team__item team__overlay::before разместить на слое под тенью от team__item с помощью flex (*)
+//(*) — po zhelaniyu
+
+@import "normalize-scss/sass/normalize/_import-now.scss";
+@import "components-font-awesome/scss/font-awesome";
+
+@import "partials/_variables";
+@import "partials/_mixins";
+
+@import "partials/_grid";
+@import "partials/section";
+@import "partials/heading";
+@import "partials/separator";
+@import "partials/button";
+
+@import "partials/header";
+@import "partials/nav";
+@import "partials/offcanvasmenu";
+@import "partials/header-slider";
+@import "partials/feature";
+@import "partials/about";
+@import "partials/services";
+@import "partials/portfolio";
+@import "partials/case";
+@import "partials/case-slider";
+@import "partials/stat";
+@import "partials/price";
+@import "partials/team";
+@import "partials/partners";
+@import "partials/blog";
+@import "partials/contacts";
+@import "partials/trial";
+@import "partials/footer";
+
+@font-face {
+  font-family: 'OpenSans';
+  font-weight: 400;
+  font-style: normal;
+
+  src: local('Open Sans Regular'), local('OpenSans-Regular'), url(https://fonts.gstatic.com/s/opensans/v15/cJZKeOuBrn4kERxqtaUH3ZBw1xU1rKptJj_0jans920.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+}
+
+@font-face {
+  font-family: 'OpenSans';
+  font-weight: 500;
+  font-style: normal;
+
+  src: local('Open Sans SemiBold'), local('OpenSans-SemiBold'), url(https://fonts.gstatic.com/s/opensans/v15/MTP_ySUJH_bn48VBG8sNShampu5_7CjHW5spxoeN3Vs.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+}
+
+@font-face {
+  font-family: 'OpenSans';
+  font-weight: 600;
+  font-style: bold;
+
+  src: local('Open Sans Bold'), local('OpenSans-Bold'), url(https://fonts.gstatic.com/s/opensans/v15/k3k702ZOKiLJc3WVjuplzBampu5_7CjHW5spxoeN3Vs.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+}
+
+body {
+  font-family: Opensans, FontAwesome;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
+* {
+  &:focus {
+    outline: none;
+  }
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  cursor: pointer;
+
+  border: none;
+  background: none;
+}
+
+.visible {
+  $b: &;
+  &__only {
+    &_xl {
+      display: none;
+
+      @include media-breakpoint-only(xl) {
+        display: block;
+      }
+    }
+    &_lg {
+      display: none;
+
+      @include media-breakpoint-only(lg) {
+        display: block;
+      }
+    }
+    &_md {
+      display: none;
+
+      @include media-breakpoint-only(md) {
+        display: block;
+      }
+    }
+  }
+  &__down {
+    &_sm {
+      display: none;
+
+      @include media-breakpoint-down(sm) {
+        display: block;
+      }
+    }
+  }
+}
+
+.container {
+  overflow-x: hidden;
+}
+
+.is-visible {
+  display: block;
+}
+
+.test {
+  position: absolute;
+  margin-left: 25%;
+}

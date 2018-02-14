@@ -1,0 +1,47 @@
+.feedback {
+  width: 100%;
+  margin-top: 65px;
+  padding: 83.5px 0;
+
+  box-shadow: 2px 4px 5px 0px rgba(0, 0, 0, 0.1);
+  &__form {
+    margin: 0 auto;
+
+    text-align: center;
+  }
+  &__field {
+    width: 68.5%;
+    margin-top: 30px;
+
+    color:  #999999;
+    border: none;
+    border-bottom: 1px solid #e5e5e5;
+
+    font-size: .875em;/* Приближение из-за подстановки шрифтов */
+    font-weight: 500;
+    line-height: 2.5;/* Приближение из-за подстановки шрифтов */
+
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+  &__message {
+    width: 68.5%;
+    height: 115px;
+    margin-top: 30px;
+
+    resize: none;
+
+    color:  #999999;
+    border: none;
+    border-bottom: 1px solid #e5e5e5;
+
+    font-size: .875em;/* Приближение из-за подстановки шрифтов */
+    font-weight: 500;
+    line-height: 2.5;/* Приближение из-за подстановки шрифтов */
+  }
+  &__button {
+    margin-top: 30px;
+    margin-left: 15.75%;
+  }
+}

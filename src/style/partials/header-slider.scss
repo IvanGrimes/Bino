@@ -1,0 +1,335 @@
+.header-slider {
+  position: relative;
+
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+
+  color: #fff;
+
+  $b: &;
+  &__viewport {
+    position: relative;
+
+    overflow: hidden;
+
+    -webkit-clip-path: polygon(100% 0, 100% 95%, 50% 100%, 0% 95%, 0 0);
+    clip-path: polygon(100% 0, 100% 95%, 50% 100%, 0% 95%, 0 0);
+    @include media-breakpoint-only(xl) {
+      -webkit-clip-path: polygon(100% 0, 100% 85%, 50% 100%, 0% 85%, 0 0);
+      clip-path: polygon(100% 0, 100% 85%, 50% 100%, 0% 85%, 0 0);
+    }
+    @include media-breakpoint-only(lg) {
+      -webkit-clip-path: polygon(100% 0, 100% 90%, 50% 100%, 0% 90%, 0 0);
+      clip-path: polygon(100% 0, 100% 90%, 50% 100%, 0% 90%, 0 0);
+    }
+    @include media-breakpoint-only(md) {
+      -webkit-clip-path: polygon(100% 0, 100% 90%, 50% 100%, 0% 90%, 0 0);
+      clip-path: polygon(100% 0, 100% 90%, 50% 100%, 0% 90%, 0 0);
+    }
+    @include media-breakpoint-only(sm) {
+      -webkit-clip-path: polygon(100% 0, 100% 92.5%, 50% 100%, 0% 92.5%, 0 0);
+      clip-path: polygon(100% 0, 100% 92.5%, 50% 100%, 0% 92.5%, 0 0);
+    }
+  }
+  &__list {
+    -webkit-transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+  }
+  &__item {
+    float: left;
+    &:before {
+      position: absolute;
+      z-index: 1;
+      width: 50%;
+      height: 115vh;
+
+      content: '';
+
+      background-color: #000;
+      opacity: .7;
+    }
+  }
+  &__image {
+    display: block;
+  }
+  &__control-nav {
+    position: absolute;
+    bottom: 30px;
+    left: 0;
+
+    text-align: center;
+  }
+  &__control-nav-item {
+    display: inline-block;
+
+    width: 10px;
+    height: 10px;
+    margin: 0 10px;
+
+    cursor: pointer;
+    -webkit-transition: all .5s linear;
+    transition: all .5s linear;
+
+    border-radius: 50%;
+    background: #fff;
+    &:hover {
+      opacity: .3;
+    }
+  }
+  &__arrow {
+    position: absolute;
+    z-index: 2;
+
+	top: calc(34% - 23px);
+
+    cursor: pointer;
+	@include media-breakpoint-up(sm) {
+		top: calc(50% - 23px);
+	}
+	@media screen and (max-width: 424px) {
+	  top: calc(37% - 23px);
+	}
+    &_left {
+      position: absolute;
+      left: 50px;
+
+      width: 45px;
+      height: 45px;
+
+      transition: transform .2s linear;
+
+      color: #3c3530;
+      border-radius: 5%;
+      background-color: #706964;
+      &:before {
+        position: absolute;
+        top: 7px;
+        left: 9px;
+
+        content: '\f053';
+        transition: transform .2s linear;
+
+        font-size: 1.875rem;
+      }
+      &:hover {
+        transform: rotate(45deg);
+
+        color: #ffffff;
+        background-color: $primary-color;
+        &:before {
+          top: 10px;
+
+          transform: rotate(-45deg);
+        }
+      }
+    }
+    &_right {
+      position: absolute;
+      right: 50px;
+
+      width: 45px;
+      height: 45px;
+
+      transition: transform .2s linear;
+
+      color: #3c3530;
+      border-radius: 5%;
+      background-color: #706964;
+      &:before {
+        position: absolute;
+        top: 7px;
+        right: 10px;
+
+        content: '\f054';
+        transition: transform .2s linear;
+
+        font-size: 1.875rem;
+      }
+      &:hover {
+        transform: rotate(-45deg);
+
+        color: #ffffff;
+        background-color: $primary-color;
+        &:before {
+          top: 10px;
+
+          transform: rotate(45deg);
+        }
+      }
+    }
+  }
+  &__content {
+    width: 50%;
+    position: absolute;
+
+    text-align: center;
+    z-index: 2;
+  }
+  &__container {
+    margin-top: 245px;
+
+    @include media-breakpoint-only(xl) {
+      margin-top: 365px;
+    }
+    @include media-breakpoint-only(lg) {
+      margin-top: 345px;
+    }
+    @include media-breakpoint-only(md) {
+      margin-top: 325px;
+    }
+    @include media-breakpoint-only(sm) {
+      margin-top: 325px;
+    }
+  }
+  &__icon {
+    margin: 0 auto;
+    margin-top: -32px;
+    z-index: 3;
+    color: $primary-color;
+    @include roundicon(64, $secondary-color, small);
+    &:after {
+      position: relative;
+      z-index: 3;
+      top: 13px;
+
+      content: '\f13d';
+
+      font-size: 1.75rem;
+    }
+  }
+  &__title {
+    margin: 0;
+    padding-bottom: 35px;
+
+    letter-spacing: 8px;
+    text-transform: uppercase;
+
+    color: $secondary-color;
+
+    font-size: 2rem;/* Приближение из-за подстановки шрифтов */
+    font-weight: 600;
+
+    @include media-breakpoint-up(lg) {
+      font-size: 4.5rem;
+    }
+    @include media-breakpoint-only(md) {
+      font-size: 3.5rem;
+    }
+    @include media-breakpoint-only(sm) {
+      font-size: 2.875rem;
+    }
+  }
+  &__subtitle {
+    margin: 0;
+    padding-right: 15px;
+
+    letter-spacing: 2px;
+
+    color: $secondary-color;
+
+    font-size: 1rem;
+    font-weight: 400;
+
+    @include media-breakpoint-up(lg) {
+      font-size: 1.5rem;
+    }
+    @include media-breakpoint-only(md) {
+      font-size: 1.25rem;
+    }
+    @include media-breakpoint-only(sm) {
+      font-size: 1.185rem;
+    }
+  }
+  &__text {
+    padding: 45px 0;
+    margin: 0 auto;
+
+    color:  #cbc6c0;
+
+    font-size: .875em;/* Приближение из-за подстановки шрифтов */
+    font-weight: 400;
+    line-height: 1.75;/* Приближение из-за подстановки шрифтов */
+
+    @include media-breakpoint-only(xl) {
+      width: 50%;
+      padding: 45px 125px;
+    }
+    @include media-breakpoint-only(lg) {
+      width: 70%;
+      padding: 45px 25px;
+    }
+    @include media-breakpoint-only(md) {
+      width: 60%;
+      padding: 45px 0px;
+    }
+    @include media-breakpoint-only(sm) {
+      width: 60%;
+      padding: 45px 0px;
+    }
+  }
+  &__buttons {
+	display: flex;
+  	justify-content: center;
+	flex-wrap: wrap;
+    @include media-breakpoint-up(sm) {
+      display: flex;
+      justify-content: center;
+    }
+  }
+  &__button {
+	display: flex;
+	flex-wrap: wrap;
+	width: 100%;
+    &_first {
+      @include media-breakpoint-up(lg) {
+        float: left;
+
+        margin-right: 15px;
+      }
+      @include media-breakpoint-only(md) {
+        margin-right: 30px;
+      }
+      @include media-breakpoint-only(sm) {
+        margin-right: 30px;
+      }
+    }
+    &_second {
+	  margin-left: 15px;
+	  @media screen and (max-width: 466px) {
+		margin-left: 0;
+		margin-top: 15px;
+	  }
+      @include media-breakpoint-up(lg) {
+        float: left;
+
+        margin-left: 15px;
+      }
+      @include media-breakpoint-only(md) {
+        margin-left: 30px;
+      }
+      @include media-breakpoint-only(sm) {
+        margin-left: 30px;
+      }
+      @include media-breakpoint-up(sm) {
+        margin-top: 0;
+      }
+    }
+  }
+}
+
+.is-active {
+  cursor: default;
+
+  opacity: .3;
+}
+
+.is-disabled {
+  cursor: default;
+
+  opacity: .5;
+}
+
+.is-hidden {
+  display: none;
+}

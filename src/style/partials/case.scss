@@ -1,0 +1,90 @@
+.case {
+  margin-top: 120px;
+  box-shadow: 1px 3px 5px 0px rgba(0, 0, 0, 0.1);
+
+  @include media-breakpoint-up(sm) {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  &__picture {
+    float: left;
+  }
+  &__container {
+    position: relative;
+    padding-bottom: 105px;
+  }
+  &__image {
+    display: none;
+    position: absolute;
+    right: 0px;
+    top: 63px;
+    @include media-breakpoint-only(md) {
+      margin-top: -11px;
+    }
+    @include media-breakpoint-up(md) {
+      display: block;
+    }
+  }
+  &__slider {
+    position: relative;
+    z-index: 3;
+    background-color: #fff;
+    padding: 0 15px;
+  }
+  &__item {
+    padding-top: 80px;
+  }
+  &__title {
+    position: relative;
+    text-align: center;
+    color:  #6a6a6a;
+    font-size: 1.125rem;/* Приближение из-за подстановки шрифтов */
+    font-weight: 500;
+    text-transform: uppercase;
+    &::after {
+      position: absolute;
+      display: block;
+      content: '';
+      width: 40px;
+      height: 1px;
+      background-color: #6a6a6a;
+      bottom: 0;
+      margin-left: calc(50% - 20px);
+      top: 55px;
+    }
+  }
+  &__text {
+    color:  #999999;
+    font-size: .875rem;
+    font-weight: 400;
+    letter-spacing: 1.05px;
+    line-height: 24px;
+    text-align: center;
+    margin-top: 0;
+    padding-top: 25px;
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+  &__button {
+    margin: 0 auto;
+    margin-top: 50px;
+    margin-bottom: 10px;
+  }
+  &__icon {
+    position: relative;
+    width: 73px;
+    height: 73px;
+    background-color: $primary-color;
+    transform: rotate(45deg);
+    margin: 0 auto;
+    margin-top: 15px;
+  }
+  &__symbol {
+    position: absolute;
+    transform: rotate(-45deg);
+    font-size: 2.5rem;
+    left: 26px;
+    top: 14px;
+    color: $secondary-color;
+  }
+}

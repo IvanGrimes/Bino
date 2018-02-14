@@ -1,0 +1,35 @@
+.nav {
+  display: none;
+  @include media-breakpoint-up(lg) {
+    display: block;
+    list-style-type: none;
+    margin-left: 245px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    @include media-breakpoint-only(lg) {
+      margin-left: 180px;
+    }
+  }
+  &__item {
+    float: left;
+    margin-left: 60px;
+    @include media-breakpoint-only(lg) {
+      margin-left: 40px;
+    }
+    &:first-child {
+      margin-left: 0px;
+    }
+    &_link {
+      font-weight: 400;
+      color: $secondary-color;
+      font-size: .875em;
+      text-transform: uppercase;
+      &:hover {
+        color: $primary-color;
+        border-bottom: 1px solid $primary-color;
+        font-weight: 600;
+        padding-bottom: 15px;
+      }
+    }
+  }
+}
